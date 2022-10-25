@@ -200,15 +200,15 @@ public class Game {
         "\n---");
         return mannchen[lives];
     }
-    public void switchPlayers(Socket player1, Socket player2) {
+    public void switchPlayers(Socket spieler1, Socket spieler2) {
         int temp = P1Losses;
         P1Losses = P2Losses;
         P2Losses = temp;
         try {
-            sp1Out = new PrintWriter(player2.getOutputStream(), true);
-            sp2Out = new PrintWriter(player1.getOutputStream(), true);
-            sp1In = new BufferedReader(new InputStreamReader(player2.getInputStream()));
-            sp2In = new BufferedReader(new InputStreamReader(player1.getInputStream()));
+            sp1Out = new PrintWriter(spieler2.getOutputStream(), true);
+            sp2Out = new PrintWriter(spieler1.getOutputStream(), true);
+            sp1In = new BufferedReader(new InputStreamReader(spieler2.getInputStream()));
+            sp2In = new BufferedReader(new InputStreamReader(spieler1.getInputStream()));
         } catch (IOException e){
             e.printStackTrace();
         }
