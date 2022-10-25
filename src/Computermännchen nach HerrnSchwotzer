@@ -1,0 +1,69 @@
+import java.io.InputStream;
+import java.io.PrintStream;
+import java.util.LinkedList;
+import java.io.*;
+
+public class computermanUI {
+    private final String playerName;
+    //private final String WoertPlayer;
+    private final BufferedReader inBufferedReader;
+    private final PrintStream outStream;
+
+    public computermanUI(String playerName, PrintStream out, InputStream in){
+        this.playerName = playerName;
+        this.outStream = out;
+        this.inBufferedReader = new BufferedReader(new InputStreamReader(in));
+
+    }
+    public void herzDesSpieles() throws IOException {
+        boolean var = true;
+        while(var){
+            boolean var2 = true;
+            String userString = null;
+            try{
+                userString = inBufferedReader.readLine();
+           }
+            catch(IOException ex){
+                this.outStream.println("Stream nichtlesbar");
+            }
+        }
+
+    }
+
+    public String woerterzufaellig(){
+       
+        LinkedList<String> hangmanliste = new LinkedList();
+        hangmanliste.add("Konstruktor");
+        hangmanliste.add("Listen");
+        hangmanliste.add("Schleife");
+        hangmanliste.add("Array");
+        hangmanliste.add("Methoden");
+
+        return(hangmanliste.get((int) (Math.random() * hangmanliste.size()) ));
+
+    }
+
+    public static void main(String[] args){
+        System.out.println("\t\t       COMPUTERMÄNNCHEN");
+        System.out.println("\nUnd so geht's:");
+        System.out.println("\nSie bekommen ein beliebiges Wort gegeben, welches sie selbst \ndurch das Erraten von Buchstaben versuchen müssen zu entziffern. \nSie können es aber auch mit Wörtern versuchen. :D ");
+        System.out.println("Aber aufgepasst!! Bei jeder falschen Eingabe, \nwird der unschuldige Roboter mehr zur Verdamnis gebracht! >_<");
+        System.out.println("\nAlso geben Sie sich Mühe und retten sie den Roboter!!!!!");
+        System.out.println("\nViel Erfolg! :)");
+
+
+
+        if(args.length<1){
+            System.err.println("Brauche Name als Parameter");
+                System.exit(1);
+            }
+        System.out.println("Willkommen " + args[0]);
+        System.out.println("Lasst uns Spielen ! ");
+
+        // Deklaration und Initialisierung der Objektvariable User
+        computermanUI user = new computermanUI(args[0], System.out, System.in);
+
+        user.herzDesSpieles();
+        user.woerterzufaellig();
+   }
+}
