@@ -3,7 +3,6 @@
   import java.io.InputStreamReader;
   import java.io.PrintWriter;
   import java.net.Socket;
-  import java.util.Arrays;
 public class Game {
 
     Boolean isRunning = true;
@@ -42,8 +41,7 @@ public class Game {
         while (P1Losses != gameLives && P2Losses != gameLives) {
             sp1Out.println("Bitte wählen Sie ein Wort aus!");
             sp2Out.println("Warten Sie bitte. Spieler 1 wählt ein Wort für Sie aus. In der nächste Runde können Sie ein Wort auswählen.");
-            //sp1Out.println("Lives left: " + (gameLives - P1Losses));
-            //P2out.println("Lives left: " + (gameLives - P2Losses));
+
             sp1Out.println("SETPHRASE");
             sp1Out.flush();
             sp2Out.flush();
@@ -128,7 +126,7 @@ public class Game {
         char[] wort = geheimesWort.toCharArray();
         int i = 0;
         for(char c : wort){
-            //if the character isn't in the guesses list, convert it to an underline.  otherwise, leave it as is.
+            //Wenn das Buchstabe nicht korrekt ist
             if (!(new String(raten).contains(String.valueOf(c)))){
                 wort[i] = '_';
             }
