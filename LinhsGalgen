@@ -1,0 +1,74 @@
+import java.io.*;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+
+public class ComputermanUI {
+    private final String Spieler1;
+    //private final String WoertPlayer;
+    private final BufferedReader inBufferedReader;
+    private final PrintStream outStream;
+
+    public ComputermanUI(String Spieler1, PrintStream out, InputStream in){
+        this.Spieler1 = Spieler1;
+        this.outStream = out;
+        this.inBufferedReader = new BufferedReader(new InputStreamReader(in));
+
+    }
+
+
+    public void HerzDesSpieles() throws IOException {
+        boolean var = true;
+        while(var){
+            boolean var2 = true;
+            String userString = null;
+            try{
+                userString = inBufferedReader.readLine();
+            }
+            catch(IOException ex){
+                this.outStream.println("Stream nichtlesbar");
+            }
+        }
+
+    }
+
+    public void Woerterzufaellig(char[] array){
+        //String liste wird erzeugt
+        LinkedList<String> hangmanliste = new LinkedList();
+
+        //inhalte werden hinzugefügt
+        hangmanliste.add("Konstruktor");
+        hangmanliste.add("Listen");
+        hangmanliste.add("Schleife");
+        hangmanliste.add("Array");
+        hangmanliste.add("Methoden");
+
+        System.out.println(hangmanliste.get((int) (Math.random() * hangmanliste.size()) ));
+
+    }
+
+
+
+    public static void main(String[] args){
+        System.out.println("\t\t       COMPUTERMÄNNCHEN");
+        System.out.println("\nUnd so geht's:");
+        System.out.println("\nSie bekommen ein beliebiges Wort gegeben, welches sie selbst \ndurch das Erraten von Buchstaben versuchen müssen zu entziffern. \nSie können es aber auch mit Wörtern versuchen. :D ");
+        System.out.println("Aber aufgepasst!! Bei jeder falschen Eingabe, \nwird der unschuldige Roboter mehr zur Verdamnis gebracht! >_<");
+        System.out.println("\nAlso geben Sie sich Mühe und retten sie den Roboter!!!!!");
+        System.out.println("\nViel Erfolg! :)");
+
+
+        System.out.println("\nGeben Sie Ihren Namen ein: ");
+        Scanner scan = new Scanner(System.in);
+        String name = String.valueOf(scan.nextInt());
+        System.out.println("Willkommen " + name);
+        System.out.println("Lass uns Spielen ! ");
+
+        // Deklaration und Initialisierung der Objektvariable User von der KLasse ComputermanUI
+        ComputermanUI user = new ComputermanUI(name, System.out, System.in);
+
+        //
+        // user.herzDesSpieles();
+        user.Woerterzufaellig();
+    }
+}
