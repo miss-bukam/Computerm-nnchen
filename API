@@ -1,0 +1,5 @@
+public interface Hangemann {
+
+    // es kommen hier abstrakte Methoden rein, dessen Aufgaben wir noch nicht sicher sind
+
+}
