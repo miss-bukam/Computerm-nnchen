@@ -1,5 +1,20 @@
 public interface Hangemann {
+    int DEFAULT_PORT = 6907;
 
-    // es kommen hier abstrakte Methoden rein, dessen Aufgaben wir noch nicht sicher sind
+    //Wort zufallig/von 2.Spieler
+    char[] wort();
+    //Spiel ausgeben
+    void run();
+    //Wort oder Wortraesel ausgeben
+    void printWort(char[] array1);
+    //Galgenmannchen zeichnen
+    String galgenmannchen(int lives);
+    int draw(int leben);
+    //Pruefen, ob Spieler richtig oder falsch errattet
+    char[] check(char [] raten,char [] wort);
+
+    //Pruefen, ob Spieler gewonnen oder verloren hast
+    boolean verloren(int leben,char[] ausgeben, char[] wort);
+
 
 }
