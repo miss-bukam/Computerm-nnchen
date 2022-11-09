@@ -23,6 +23,9 @@ public class ComputermanUI {
 
     }
 
+
+// In der Ausführungsschleife wird nach jedem befehl des Spielers etwas macht und dann auf ein neuen Befehl wartet
+
     public void aufuehrungSchleife() {
         boolean again = true;
 
@@ -52,6 +55,8 @@ public class ComputermanUI {
                 parameterString = parameterString.trim();
 
                 // start command loop
+                // ab hier werden nur von Spieler eingegebe Befehle 
+                
                 switch (commandString) {
                     case PRINT:
                         this.doHangman(PRINT);
@@ -86,12 +91,15 @@ public class ComputermanUI {
     }
    public void ausgabeMethode(){
        int length = 20;
-        // Stringbuilder = Erstellen ein String der eine größe Length hat
+       // Stringbuilder = Erstellen ein String der eine größe Length hat
        //Stände keine Length wäre, es eine Kapazität von 16.
+       
        StringBuilder build = new StringBuilder(length);
 
        //append Methode von der Klasse Stringbuilder
+       //einfach nur eine HilfeStellung für den Spieler
        // Sie wird genutzt um Sätze oder ähnliches an den String hinzuzufügen.
+       
        build.append("\n");
        build.append("\t valid commands:");
        build.append("\n");
@@ -112,6 +120,7 @@ public class ComputermanUI {
 
        //gibt in die Adresse des Outstream den Inhalt des Strings aus
        // mit "this.Outstream" wird tatsächlich nur der Inhalt und nicht die Adresse ausgegeben
+       
        this.outStream.println(build.toString());
    }
 
@@ -122,6 +131,8 @@ public class ComputermanUI {
    private void doHangman(String cmd) {
        this.doHangman(cmd, null);
    }
+
+// ab hier werden die Befehle von Usern eingegeben
 
     private void doHangman(String cmd, String parameterString) {
         System.out.print("command: " + cmd);
