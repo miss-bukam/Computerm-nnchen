@@ -1,20 +1,59 @@
+package UI;
+
 public interface Hangemann {
+
+    /**
+     * es kommen hier abstrakte Methoden rein, dessen Aufgaben wir noch nicht sicher sind
+     */
+
+    /**
+     * Kanal zwischen Spieler und den Servern
+     */
     int DEFAULT_PORT = 6907;
 
-    //Wort zufallig/von 2.Spieler
-    char[] wort();
-    //Spiel ausgeben
-    void run();
-    //Wort oder Wortraesel ausgeben
+    /**
+     * eine Sammlung von Wörtern
+     * @return gibt ein zufälliges Wort aus der Wörterliste
+     */
+    char[] woerterListe();
+
+    /**
+     * fuehrt Spiel aus
+     */
+    void starteSpiel();
+
+    /**
+     * Wort oder Buchstabe vom Spieler ausgeben
+     * @param array1 gibt das Wort als Array aus
+     */
     void printWort(char[] array1);
-    //Galgenmannchen zeichnen
-    String galgenmannchen(int lives);
-    int draw(int leben);
-    //Pruefen, ob Spieler richtig oder falsch errattet
-    char[] check(char [] raten,char [] wort);
 
-    //Pruefen, ob Spieler gewonnen oder verloren hast
-    boolean verloren(int leben,char[] ausgeben, char[] wort);
+    /** zeichnet den Galgen
+     * @param leben Leben der Spieler
+     * @return liefert den sterbenden Galgen zurück
+     */
+    String zeichnetGalgen(int leben);
 
+    /**
+     * Stand der Leben
+     * @param leben Leben der Spieler
+     * @return gibt das aktuelle Stand der Leben zurück
+     */
+    int updateLeben(int leben);
 
+    /**
+     * pruefen, ob Spieler richtig oder falsch errattet haben nach jeder Eingabe
+     * @param eingabewort Buchstaben die eingegeben sind
+     * @param wort das aktuelle Wort
+     * @return gibt an, ob es richtig oder falsch erraten wurde
+     */
+    char[] check (char [] eingabewort, char [] wort);
+
+    /**
+     * prueft am Ende ob man gewonnen oder gewonnen hat
+     * @param leben aktuelle Leben des Spielers
+     * @param ausgeben gibt den Buchstaben/ das Wort wieder
+     * @param wort aktuelles Wort
+     */
+    void pruefen (int leben, char[] ausgeben, char[] wort);
 }
