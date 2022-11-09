@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Scanner;
 
 
 public class ComputermanUI {
@@ -11,6 +12,7 @@ public class ComputermanUI {
     private final String Spieler1;
 
     //private final String WoerteSpieler;
+    
     private final BufferedReader inBufferedReader;
     private final PrintStream outStream;
 
@@ -110,13 +112,13 @@ public class ComputermanUI {
        build.append(".. open port become tcp server");
        build.append("\n");
        build.append(PRINT);
-       build.append(".. print board");
+       build.append(".. print word");
        build.append("\n");
        build.append(SET);
-       build.append(".. set a piece");
+       build.append(".. set a letter");
        build.append("\n");
        build.append(EXIT);
-       build.append(".. exit");
+       build.append(".. exit Game");
 
        //gibt in die Adresse des Outstream den Inhalt des Strings aus
        // mit "this.Outstream" wird tatsächlich nur der Inhalt und nicht die Adresse ausgegeben
@@ -162,7 +164,9 @@ public class ComputermanUI {
 
         //hier wird mit dem KOnstruktor die Methode aufgerufen
         user.ausgabeMethode();
+        user.aufuehrungSchleife();
+       //Scanner scan = new Scanner(System.in);
+       //user.doHangman(Spieler1, scan.nextLine());
     }
 
 }
-
