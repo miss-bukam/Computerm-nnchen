@@ -1,0 +1,28 @@
+import UI.Hangemann;
+import org.junit.jupiter.api.Test;
+
+import java.util.LinkedList;
+
+public class HangmanTest {
+
+    @Test
+
+    public void keinTest () {
+
+        Hangemann game = new HangemannImpl();
+
+    }
+
+    public char[] woerterliste1() {
+        LinkedList<String> hangmanliste = new LinkedList();
+
+        //inhalte werden hinzugefügt
+        hangmanliste.add("Konstruktor");
+        hangmanliste.add("Listen");
+        hangmanliste.add("Schleife");
+        hangmanliste.add("Array");
+        hangmanliste.add("Methoden");
+
+        return hangmanliste.get((int) (Math.random() * hangmanliste.size())).toCharArray();
+    }
+}
