@@ -1,0 +1,36 @@
+import UI.Hangemann;
+
+import java.util.LinkedList;
+
+public class HangemannImpl implements Hangemann {
+
+    @Override
+    public char[] woerterListe() {
+        LinkedList<String> hangmanliste = new LinkedList();
+
+        //inhalte werden hinzugefügt
+        hangmanliste.add("Konstruktor");
+        hangmanliste.add("Listen");
+        hangmanliste.add("Schleife");
+        hangmanliste.add("Array");
+        hangmanliste.add("Methoden");
+
+        return hangmanliste.get((int) (Math.random() * hangmanliste.size())).toCharArray();
+    }
+
+    @Override
+    public void starteSpiel() {
+
+    }
+
+    @Override
+    public void printWort(char[] array1) {
+
+    }
+
+    @Override
+    public String zeichnetGalgen(int leben) {
+        return null;
+    }
+
+}
