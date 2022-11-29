@@ -1,9 +1,13 @@
 import UI.Hangemann;
 import org.junit.jupiter.api.Test;
-
+import java.util.List;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Stack;
 
 public class HangmanTest {
+
+    String geheimesWort;
 
     @Test
 
@@ -12,6 +16,8 @@ public class HangmanTest {
         Hangemann game = new HangemannImpl();
 
     }
+
+    @Test
 
     public char[] woerterliste1() {
         LinkedList<String> hangmanliste = new LinkedList();
@@ -25,4 +31,122 @@ public class HangmanTest {
 
         return hangmanliste.get((int) (Math.random() * hangmanliste.size())).toCharArray();
     }
+
+    @Test
+
+    public char[] woerterliste2(){
+        List<String> myArrayList = new ArrayList<>();
+
+        //inhalte werden hinzugefügt
+        myArrayList.add("Konstruktor");
+        myArrayList.add("Listen");
+        myArrayList.add("Schleife");
+        myArrayList.add("Array");
+        myArrayList.add("Methoden");
+
+        return myArrayList.get((int) (Math.random() * myArrayList.size())).toCharArray();
+    }
+
+    @Test
+
+    public char[] woerterliste3() {
+        List<String> myStack = new Stack<>();
+
+        //inhalte werden hinzugefügt
+        myStack.add("Konstruktor");
+        myStack.add("Listen");
+        myStack.add("Schleife");
+        myStack.add("Array");
+        myStack.add("Methoden");
+
+        return myStack.get((int) (Math.random() * myStack.size())).toCharArray();
+    }
+
+    @Test
+
+    void starteSpiel(){
+
+    }
+
+    @Test
+
+    void starteSpiel2(){
+
+    }
+
+    @Test
+
+    public String printWort(char[] raten){
+        char[] wort = geheimesWort.toCharArray();
+        int i = 0;
+        for(char c : wort){
+            //if the character isn't in the guesses list, convert it to an underline.  otherwise, leave it as is.
+            if (!(new String(raten).contains(String.valueOf(c)))){
+                wort[i] = '_';
+            }
+            i++;
+        }
+        return String.valueOf(wort);
+    }
+
+    //@Test
+
+    public void printWort2(char[] raten) {
+
+    }
+
+    @Test
+
+    String zeichnetGalgen(int leben) {
+
+        String[] mannchen = new String[9];
+        mannchen[0] = ("\n|--------|"+
+                "\n|       (_)"+
+                "\n|      --|--"+
+                "\n|       / )"+
+                "\n---");
+        mannchen[1] = ("\n|--------|"+
+                "\n|       (_)"+
+                "\n|      --|--"+
+                "\n|       /"+
+                "\n---");
+        mannchen[2] = ("\n|--------|"+
+                "\n|       (_)"+
+                "\n|      --|--"+
+                "\n|"+
+                "\n---");
+        mannchen[3] = ("\n|--------|"+
+                "\n|       (_)"+
+                "\n|        |"+
+                "\n|"+
+                "\n---");
+        mannchen[4]=("\n|--------|"+
+                "\n|       (_)"+
+                "\n|"+
+                "\n|"+
+                "\n---");
+        mannchen[5]=("\n|--------|"+
+                "\n|"+
+                "\n|"+
+                "\n|"+
+                "\n---");
+        mannchen[6] =("\n|--------|"+
+                "\n|"+
+                "\n|"+
+                "\n|"+
+                "\n˜˜˜");
+        mannchen[7] = ("\n|"+
+                "\n|"+
+                "\n|"+
+                "\n|"+
+                "\n---");
+        mannchen[8] = ("\n"+
+                "\n"+
+                "\n"+
+                "\n"+
+                "\n---");
+        return mannchen[leben];
+    }
+
+
 }
