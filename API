@@ -3,6 +3,8 @@ package UI;
 // @author Linh
 // @author waindja
 
+import java.util.EmptyStackException;
+
 public interface Hangemann {
 
     /**
@@ -13,8 +15,10 @@ public interface Hangemann {
     /**
      * eine Sammlung von Wörtern
      * @return gibt ein zufälliges Wort aus der Wörterliste
+     * @throws EmptyStackException
+     * @throws NegativeArraySizeException
      */
-    char[] woerterListe();
+    char[] woerterListe() throws EmptyStackException, NegativeArraySizeException;
 
     /**
      * fuehrt Spiel aus
@@ -23,15 +27,17 @@ public interface Hangemann {
 
     /**
      * Wort oder Buchstabe vom Spieler ausgeben
-     * @param array1 gibt das Wort als Array aus
+     * @param geheimesWort gibt das Wort als Array aus
+     * @throws ArrayIndexOutOfBoundsException
      */
-    void printWort(char[] array1);
+    public String printWort(char[] geheimesWort) throws ArrayIndexOutOfBoundsException;
 
     /** zeichnet den Galgen
      * @param leben Leben der Spieler
      * @return liefert den sterbenden Galgen zurück
+     * @throws StringIndexOutOfBoundsException
      */
-    String zeichnetGalgen(int leben);
+    String zeichnetGalgen(int leben) throws StringIndexOutOfBoundsException;
 
     /**
      * Stand der Leben
