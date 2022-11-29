@@ -1,10 +1,9 @@
 package UI;
 
-public interface Hangemann {
+// @author Linh
+// @author waindja
 
-    /**
-     * es kommen hier abstrakte Methoden rein, dessen Aufgaben wir noch nicht sicher sind
-     */
+public interface Hangemann {
 
     /**
      * Kanal zwischen Spieler und den Servern
@@ -39,7 +38,7 @@ public interface Hangemann {
      * @param leben Leben der Spieler
      * @return gibt das aktuelle Stand der Leben zurück
      */
-    int updateLeben(int leben);
+    // int updateLeben(int leben);
 
     /**
      * pruefen, ob Spieler richtig oder falsch errattet haben nach jeder Eingabe
@@ -47,7 +46,7 @@ public interface Hangemann {
      * @param wort das aktuelle Wort
      * @return gibt an, ob es richtig oder falsch erraten wurde
      */
-    char[] check (char [] eingabewort, char [] wort);
+    // char[] check (char [] eingabewort, char [] wort);
 
     /**
      * prueft am Ende ob man gewonnen oder gewonnen hat
@@ -55,5 +54,5 @@ public interface Hangemann {
      * @param ausgeben gibt den Buchstaben/ das Wort wieder
      * @param wort aktuelles Wort
      */
-    void pruefen (int leben, char[] ausgeben, char[] wort);
+    // void pruefen (int leben, char[] ausgeben, char[] wort);
 }
