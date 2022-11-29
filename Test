@@ -1,9 +1,7 @@
 import UI.Hangemann;
 import org.junit.jupiter.api.Test;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Stack;
+
+import java.util.*;
 
 public class HangmanTest {
 
@@ -19,7 +17,7 @@ public class HangmanTest {
 
     @Test
 
-    public char[] woerterliste1() {
+    public char[] woerterliste1() throws StringIndexOutOfBoundsException {
         LinkedList<String> hangmanliste = new LinkedList();
 
         //inhalte werden hinzugefügt
@@ -34,7 +32,7 @@ public class HangmanTest {
 
     @Test
 
-    public char[] woerterliste2(){
+    public char[] woerterliste2() throws NegativeArraySizeException {
         List<String> myArrayList = new ArrayList<>();
 
         //inhalte werden hinzugefügt
@@ -49,7 +47,7 @@ public class HangmanTest {
 
     @Test
 
-    public char[] woerterliste3() {
+    public char[] woerterliste3() throws EmptyStackException {
         List<String> myStack = new Stack<>();
 
         //inhalte werden hinzugefügt
@@ -76,7 +74,7 @@ public class HangmanTest {
 
     @Test
 
-    public String printWort(char[] raten){
+    public String printWort(char[] raten) throws ArrayIndexOutOfBoundsException {
         char[] wort = geheimesWort.toCharArray();
         int i = 0;
         for(char c : wort){
@@ -97,7 +95,7 @@ public class HangmanTest {
 
     @Test
 
-    String zeichnetGalgen(int leben) {
+    String zeichnetGalgen(int leben) throws StringIndexOutOfBoundsException {
 
         String[] mannchen = new String[9];
         mannchen[0] = ("\n|--------|"+
